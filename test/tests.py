@@ -27,19 +27,25 @@
 #    },
 #    ]
 
-tests = [ {'description': 'PINA: 0x00 => PORTB: 0x02',
-	'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 5 } ],
-	'expected': [('PORTB',0x02)],
+tests = [ {'description': 'PINA: 0x00, PINB: 0x00, PINC: 0x00 => PORTd: 0x00',
+	'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x00), ('PINC', 0x00)], 'iterations': 5 } ],
+	'expected': [('PORTD',0x00)],
 	},
-	{'description': 'PINA: 0x02 => PORTB: 0x02',
-	'steps': [ {'inputs': [('PINA',0x02)], 'iterations': 5 } ],
-	'expected': [('PORTB',0x02)],
+	{'description': 'PINA: 0x34, PINB: 0x11, PINC: 0x05 (74lbs)=> PORTd: 0x00',
+	'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x00), ('PINC', 0x00)], 'iterations': 5 } ],
+	'expected': [('PORTD',0x00)],
 	},
-	{'description': 'PINA: 0x01 => PORTB: 0x01',
-	'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 5 } ],
-	'expected': [('PORTB',0x01)],
+	{'description': 'PINA: 0x00, PINB: 0x00, PINC: 0x00 => PORTd: 0x00',
+	'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x00), ('PINC', 0x00)], 'iterations': 5 } ],
+	'expected': [('PORTD',0x00)],
 	},
-	]
+	{'description': 'PINA: 0x00, PINB: 0x00, PINC: 0x00 => PORTd: 0x00',
+	'steps': [ {'inputs': [('PINA',0x00), ('PINB', 0x00), ('PINC', 0x00)], 'iterations': 5 } ],
+	'expected': [('PORTD',0x00)],
+	},
+
+	
+]
 #watch = ['PORTB']
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
